@@ -1,7 +1,7 @@
 # MyPortfolio
 🚀 Personal portfolio website built using React.js to showcase projects, achievements, skills, and contact functionality via EmailJS.
 
-# 💼 Dhruvi Topiya's Portfolio
+# 💼 Dhruvi Topiya
 
 This is my personal portfolio website built using React.js. It showcases my academic background, technical skills, real-world projects, hackathon achievements, and includes a contact form powered by EmailJS.
 
@@ -21,7 +21,7 @@ This is my personal portfolio website built using React.js. It showcases my acad
 
 ## 🌐 Live Site
 
-[Click to View Portfolio](https://your-username.github.io/my-portfolio)
+[Click to View Portfolio](https://dtechtrack.github.io/Portfolio)
 
 ## 📬 Contact Me
 
