@@ -1,0 +1,292 @@
+/* Contact.css - Contact Component Styles */
+#contact {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a0a2e 25%, #16213e 50%, #0f0f23 75%, #000000 100%);
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+#contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+#contact h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #ffffff, #e0e7ff, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 2;
+}
+
+#contact h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  border-radius: 2px;
+}
+
+#contact form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+#contact input,
+#contact textarea {
+  padding: 1.2rem 1.5rem;
+  border: 2px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.1);
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  position: relative;
+  outline: none;
+}
+
+#contact input::placeholder,
+#contact textarea::placeholder {
+  color: #a5b4fc;
+  opacity: 0.7;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border-color: #8b5cf6;
+  background: rgba(139, 92, 246, 0.15);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  transform: translateY(-2px);
+}
+
+#contact textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+#contact button {
+  padding: 1.2rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+  align-self: center;
+  min-width: 160px;
+}
+
+#contact button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+#contact button:hover::before {
+  left: 100%;
+}
+
+#contact button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(139, 92, 246, 0.4);
+  background: linear-gradient(135deg, #a855f7, #c084fc);
+}
+
+#contact button:active {
+  transform: translateY(-1px);
+}
+
+/* Form animations */
+#contact form > * {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+#contact form input:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+#contact form input:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#contact form textarea:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+#contact form button:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* Input field glow effect */
+#contact input:focus::after,
+#contact textarea:focus::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(168, 85, 247, 0.1));
+  pointer-events: none;
+  opacity: 0;
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Success/Error message styling */
+.message {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.message.success {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.1));
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  color: #4ade80;
+}
+
+.message.error {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.1));
+  border: 2px solid rgba(239, 68, 68, 0.3);
+  color: #f87171;
+}
+
+/* Contact info section (if you want to add it) */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a5b4fc;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.contact-item:hover {
+  color: #c084fc;
+  transform: translateY(-3px);
+  background: rgba(139, 92, 246, 0.1);
+}
+
+.contact-item .icon {
+  font-size: 1.5rem;
+  color: #8b5cf6;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #contact {
+    padding: 40px 20px;
+    margin: 20px auto;
+  }
+  
+  #contact h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  #contact form {
+    gap: 1.2rem;
+  }
+  
+  #contact input,
+  #contact textarea {
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+  }
+  
+  #contact button {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .contact-info {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #contact {
+    padding: 30px 15px;
+    border-radius: 15px;
+  }
+  
+  #contact h2 {
+    font-size: 1.8rem;
+  }
+  
+  #contact form {
+    gap: 1rem;
+  }
+  
+  #contact input,
+  #contact textarea {
+    padding: 0.9rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  #contact textarea {
+    min-height: 100px;
+  }
+  
+  #contact button {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+    min-width: 140px;
+  }
+}

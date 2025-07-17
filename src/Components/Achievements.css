@@ -1,0 +1,236 @@
+/* Achievements.css - Achievements Component Styles */
+#achievements {
+  background: linear-gradient(135deg, #16213e 0%, #0f0f23 50%, #1a0a2e 100%);
+  border-radius: 20px;
+  margin: 40px auto;
+  padding: 60px 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+#achievements::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 40% 30%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+#achievements h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(135deg, #ffffff, #e0e7ff, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  z-index: 2;
+}
+
+#achievements h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  border-radius: 2px;
+}
+
+#achievements ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+#achievements li {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 15px;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+#achievements li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+#achievements li:hover::before {
+  left: 100%;
+}
+
+#achievements li:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.5);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(139, 92, 246, 0.15));
+}
+
+#achievements li strong {
+  color: #c084fc;
+  font-size: 1.4rem;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+#achievements li strong::before {
+  content: '🏆';
+  margin-right: 0.8rem;
+  font-size: 1.2rem;
+  filter: hue-rotate(270deg);
+  transition: transform 0.3s ease;
+}
+
+#achievements li:hover strong::before {
+  transform: scale(1.2) rotate(10deg);
+}
+
+#achievements li::after {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #a855f7, #c084fc);
+  border-radius: 50%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 0.3s ease;
+}
+
+#achievements li:hover::after {
+  opacity: 0.3;
+  transform: scale(1);
+}
+
+#achievements li p,
+#achievements li:not(:has(strong)) {
+  color: #a5b4fc;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+/* Achievement badges */
+#achievements li::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7, #c084fc, #8b5cf6);
+  border-radius: 20px;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.3s ease;
+  background-size: 400% 400%;
+  animation: gradient 4s ease infinite;
+}
+
+#achievements li:hover::before {
+  opacity: 0.3;
+}
+
+/* Individual achievement styling */
+#achievements li:nth-child(1) {
+  animation: fadeInUp 0.8s ease-out 0.1s both;
+}
+
+#achievements li:nth-child(2) {
+  animation: fadeInUp 0.8s ease-out 0.3s both;
+}
+
+/* Add year badges */
+#achievements li strong::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.3rem 0.8rem;
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+#achievements li:nth-child(1) strong::after {
+  content: '2025';
+}
+
+#achievements li:nth-child(2) strong::after {
+  content: '2025';
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #achievements {
+    padding: 40px 20px;
+    margin: 20px auto;
+  }
+  
+  #achievements h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  #achievements li {
+    padding: 2rem;
+  }
+  
+  #achievements li strong {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #achievements {
+    padding: 30px 15px;
+    border-radius: 15px;
+  }
+  
+  #achievements h2 {
+    font-size: 1.8rem;
+  }
+  
+  #achievements li {
+    padding: 1.5rem;
+  }
+  
+  #achievements li strong {
+    font-size: 1rem;
+  }
+  
+  #achievements li strong::before {
+    font-size: 1rem;
+  }
+}
