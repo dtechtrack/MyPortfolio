@@ -43,11 +43,11 @@ const Contact = () => {
       
       {/* Optional: Add contact info section */}
       <div className="contact-info">
-        <a href="mailto:your.email@example.com" target="_blank" className="contact-item">
+        <a href="mailto:topiya.dhruvi@gmail.com" target="_blank" className="contact-item">
           <span className="icon">📧</span>
           <span>Email</span>
         </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" className="contact-item">
+        <a href="https://www.linkedin.com/in/dhruvi-topiya/" target="_blank" className="contact-item">
           <span className="icon">💼</span>
           <span>LinkedIn</span>
         </a>
