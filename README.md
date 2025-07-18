@@ -18,7 +18,7 @@ This is my personal portfolio website built using React.js. It showcases my acad
 
 ## 🌐 Live Site
 
-[Click to View Portfolio](https://github.com/dtechtrack/MyPortfolio)
+[Click to View Portfolio](https://dhruuvi.netlify.app/)
 
 ## 📬 Contact Me
 
