@@ -10,7 +10,7 @@ This is my personal portfolio website built using React.js. It showcases my acad
 - ⚛️ React.js
 - 🎨 CSS3
 - 📩 EmailJS (for contact form)
-- 📦 GitHub Pages (for deployment)
+
 
 ## 📁 Features
 
